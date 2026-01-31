@@ -1,0 +1,46 @@
+<iframe
+  srcdoc="
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        body {
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-family: Arial, sans-serif;
+          background: #111;
+          color: #fff;
+        }
+        .days {
+          font-size: 48px;
+          font-weight: bold;
+        }
+        .label {
+          font-size: 16px;
+          opacity: 0.8;
+        }
+      </style>
+    </head>
+    <body>
+      <div>
+        <div class='days' id='daysLeft'></div>
+        <div class='label'>days left in the year</div>
+      </div>
+
+      <script>
+        const today = new Date();
+        const endOfYear = new Date(today.getFullYear(), 11, 31);
+        const oneDay = 1000 * 60 * 60 * 24;
+        const daysLeft = Math.ceil((endOfYear - today) / oneDay);
+        document.getElementById('daysLeft').textContent = daysLeft;
+      </script>
+    </body>
+    </html>
+  "
+  width="300"
+  height="150"
+  style="border:none;border-radius:12px;"
+></iframe>
